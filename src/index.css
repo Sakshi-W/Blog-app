@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.bg-heading {
+    background-image: url('./assets/images.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: transparent;
+    /* Additional background-related styles if needed */
+  }
+
+
+.text-center {
+    text-align: center;
+  }
