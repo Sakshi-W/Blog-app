@@ -1,4 +1,4 @@
-import { Button, Space } from "antd";
+import { Button } from "antd";
 import React from "react";
 import { CgWebsite } from "react-icons/cg";
 import { useHistory } from "react-router-dom";
@@ -15,11 +15,11 @@ const AppHeader = () => {
   };
 
   return (
-    <Space className="header_space">
+    <div className="header_space"> {/* Fixed className to div */}
       <Button className="header_space_brand" href="/" type="link">
         <CgWebsite size={64} />
       </Button>
-      <Space className="auth_buttons">
+      <div className="auth_buttons"> {/* Fixed className to div */}
         {user ? (
           <>
             <Button className="auth_button_login" href="/profile" type="link">
@@ -47,8 +47,8 @@ const AppHeader = () => {
             </Button>
           </>
         )}
-      </Space>
-    </Space>
+      </div> 
+    </div>
   );
 };
 
