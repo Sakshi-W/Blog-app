@@ -1,25 +1,25 @@
-import { Button } from "antd";
+import { Button, Space } from "antd";
 import React from "react";
 import { CgWebsite } from "react-icons/cg";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useAuthContext } from "../../context/AuthContext";
 import { removeToken } from "../../helpers";
 
 const AppHeader = () => {
   const { user } = useAuthContext();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const handleLogout = () => {
     removeToken();
-    history.replace("/signin");
+    navigate("/signin", { replace: true });
   };
 
   return (
-    <div className="header_space"> {/* Fixed className to div */}
+    <Space className="header_space">
       <Button className="header_space_brand" href="/" type="link">
         <CgWebsite size={64} />
       </Button>
-      <div className="auth_buttons"> {/* Fixed className to div */}
+      <Space className="auth_buttons">
         {user ? (
           <>
             <Button className="auth_button_login" href="/profile" type="link">
@@ -47,8 +47,8 @@ const AppHeader = () => {
             </Button>
           </>
         )}
-      </div> 
-    </div>
+      </Space>
+    </Space>
   );
 };
 
