@@ -1,16 +1,28 @@
-import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home';
-import Login from './Pages/Login';
+    
+import React from "react";
+import { Col, Layout, Row } from "antd";
+import AppHeader from "./components/Appheader/Appheader";
+import AppRoutes from "./Routes";
+const { Header, Content } = Layout;
 
-export default function App() {
+const App = () => {
   return (
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Login />} />
-        <Route exact path="/home" element={<Home />} />
-      </Routes>
-    </Router>
+    <Layout>
+      <Row gutter={[0, 32]}>
+        <Col span={24}>
+          <Header>
+            <AppHeader />
+          </Header>
+        </Col>
+        <Col span={22} offset={1}>
+          <Content>
+            <AppRoutes />
+          </Content>
+        </Col>
+      </Row>
+    </Layout>
   );
-}
+};
+
+export default App;
 
